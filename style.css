@@ -1,0 +1,13 @@
+#hero {
+  background-image: url('img/home.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#hero .card {
+  text-align: center;
+  margin-top: 30vh;
+  width: 40vw;
+}
