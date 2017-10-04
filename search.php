@@ -10,6 +10,19 @@
   </head>
   <body>
 
+    <?php $db = mysqli_connect('localhost:8889', 'root', 'root', 'realestate_db') or die("can't conntect"); ?>
+
+    <?php
+
+    $query = "SELECT * FROM realestate_table;";
+    $result = mysqli_query($db, $query);
+    while($row = mysqli_fetch_array($result)) {
+      echo $row['name'];
+    }
+
+    ?>
+
+    <?php mysqli_close($db); ?>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
