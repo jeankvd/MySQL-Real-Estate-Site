@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php include('header.php'); ?>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  </head>
-  <body>
+<p>
+  Lorem ipsum so i can see the db query
+  Lorem ipsum so i can see the db query <br>
+  Lorem ipsum so i can see the db query <br>
+</p>
 
     <?php $db = mysqli_connect('localhost:8889', 'root', 'root', 'realestate_db') or die("can't conntect"); ?>
 
     <?php
 
-    $query = "SELECT * FROM realestate_table;";
+    $query = "SELECT * FROM realestate_table LIMIT 1;";
     $result = mysqli_query($db, $query);
+    echo "<div class='container'><div class='row'>";
     while($row = mysqli_fetch_array($result)) {
-      echo $row['name'];
+      echo "<div class='col-3 card'>";
+      echo "<h4>" . $row['name'] . "</h4>";
+      echo "<h6>" . $row[beds] . " Beds/ " .
+        $row["baths"] . " Baths/ " .
+        $row["size"] . "sqft." . "</h6>";
+      echo "<p>" . $row['address'] . "</p>";
+      echo "<p>" . $row['community'] . "</p>";
+      echo "<p>" . "$" . $row['price'] . "</p>";
+      echo "</div>";
     }
+    echo "</div></div>";
 
     ?>
 
