@@ -10,7 +10,7 @@
 
     <?php
 
-    $query = "SELECT * FROM realestate_table LIMIT 1;";
+    $query = "SELECT * FROM realestate_table;";
     $result = mysqli_query($db, $query);
     echo "<div class='container'><div class='row'>";
     while($row = mysqli_fetch_array($result)) {

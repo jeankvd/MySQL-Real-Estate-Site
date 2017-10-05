@@ -19,10 +19,10 @@
       <a class="navbar-brand" href="#">Navbar</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="search.html">search</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="search.php">search</a>
+          <a class="nav-item nav-link" href="addProperty.php">Add</a>
+          <a class="nav-item nav-link" href="members.php">Members</a>
         </div>
       </div>
     </nav>
