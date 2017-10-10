@@ -9,19 +9,38 @@
     <?php $db = mysqli_connect('localhost:8889', 'root', 'root', 'realestate_db') or die("can't conntect"); ?>
 
     <?php
+    $name = $_POST['name'];
+    $beds = $_POST['beds'];
+    $bathrooms = $_POST['bathrooms'];
+    $min_price = $_POST['min-price'];
+    $max_price = $_POST['max-price'];
 
-    $query = "SELECT * FROM realestate_table;";
+    if (isset($_POST['submit'])) {
+      $query = "SELECT * FROM realestate_table  WHERE ";
+      if (!empty($_POST['name'])) { $query = $query . "name = $name AND "; }
+      $query = $query . "beds >= $beds AND ";
+      $query = $query . "baths >= $bathrooms AND ";
+      $query = $query . "price > $min_price AND ";
+      $query = $query . "price < $max_price";
+      $query = $query . ";";
+    } else {
+      $query = "SELECT * FROM realestate_table;";
+    }
+
     $result = mysqli_query($db, $query);
-    echo "<div class='container'><div class='row'>";
+
+    echo "<div class='container' id='search-container'><div class='row' id='row'>";
     while($row = mysqli_fetch_array($result)) {
       echo "<div class='col-3 card'>";
-      echo "<h4>" . $row['name'] . "</h4>";
-      echo "<h6>" . $row[beds] . " Beds/ " .
+      echo "<img class='card-img-top img-fluid' alt='Card image' src='images/".$row['image']."' >";
+      echo "<h4 class='card-title'>" . $row['name'] . "</h4>";
+      echo "<h6>" . $row['beds'] . " Beds/ " .
         $row["baths"] . " Baths/ " .
         $row["size"] . "sqft." . "</h6>";
-      echo "<p>" . $row['address'] . "</p>";
-      echo "<p>" . $row['community'] . "</p>";
-      echo "<p>" . "$" . $row['price'] . "</p>";
+      echo "<p> <strong>Address</strong>: " . $row['address'] . "</p>";
+      echo "<p> <strong>Community</strong>: " . $row['community'] . "</p>";
+      echo "<p> <strong>Price</strong>: " . "$" . $row['price'] . "</p>";
+      echo "<div class='delete'>x</div>";
       echo "</div>";
     }
     echo "</div></div>";
@@ -35,4 +54,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
+  <script type="text/javascript" src="app.js"></script>
+
 </html>

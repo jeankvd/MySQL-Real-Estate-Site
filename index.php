@@ -7,30 +7,37 @@
       <div class="container card">
         <h2 class="">Find Your New Home</h2>
         <p class="">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        <form>
-          <input type="text" name="" value="">
-          <input type="range" name="" value="" max="100000">
-          <select name="cars">
-            <option value="1,000">$1,000</option>
-            <option value="10,000">$10,000</option>
-            <option value="25,000">$25,000</option>
-            <option value="50,000">$50,000</option>
+        <form action="search.php" method="post">
+          <input type="text" name="name" value="" placeholder="House Name" class="col-9">
+          <select name="min-price" class="col-sm-5">
+            <option value="1000">Min. Price</option>
+            <option value="1000">$1,000</option>
+            <option value="10000">$10,000</option>
+            <option value="25000">$25,000</option>
+            <option value="50000">$50,000</option>
           </select>
-          <select name="beds">
-            <option value="beds">Number of Beds</option>
+          <select name="max-price" class="col-sm-5">
+            <option value="100000">Max. Price</option>
+            <option value="10000">$10,000</option>
+            <option value="25000">$25,000</option>
+            <option value="50000">$50,000</option>
+            <option value="100000">$100,000</option>
+          </select>
+          <select name="beds" class="ml-auto mr-auto">
+            <option value="1">Number of Beds</option>
             <option value="1">1 Bed</option>
             <option value="2">2 Beds</option>
             <option value="3">3 Beds</option>
             <option value="4">+4 Beds</option>
           </select>
-          <select name="bathrooms">
-            <option value="beds">Number of Bathrooms</option>
+          <select name="bathrooms" class="ml-auto mr-auto">
+            <option value="1">Number of Bathrooms</option>
             <option value="1">1 Bath</option>
             <option value="2">2 Baths</option>
             <option value="3">3 Baths</option>
             <option value="4">4 Baths</option>
           </select>
-          <input type="submit" action="post" name="" value="Submit">
+          <input type="submit" name="submit" value="Find A Home">
         </form>
       </div>
     </div>

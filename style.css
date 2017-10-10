@@ -1,13 +1,121 @@
+/*Home & Add Property */
+
 #hero {
   background-image: url('img/home.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  margin-top: 4%;
 }
 
-#hero .card {
+#hero .card, #add .card {
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 10vh;
   width: 40vw;
+  border: solid 20px rgba(0,0,0,.5);
+  padding: 0;
+
+  /*Border*/
+  -moz-background-clip: border;     /* Firefox 3.6 */
+  -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+  background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+  -moz-background-clip: content;     /* Firefox 3.6 */
+  -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+  background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+}
+
+#hero h2, #add h2 {
+  margin-top: 5%;
+  color: #A91C24;
+}
+
+#hero input[type=text] {
+  margin: 2%;
+}
+
+#hero select[name=beds], #hero select[name=bathrooms], #add select[name=beds], #add select[name=bathrooms] {
+  display: block;
+  text-align: center;
+  margin: 2% 0;
+  padding: 3%;
+  text-indent: 8px;
+  width: 200px;
+  height: 38px;
+  background-color: #f2f2f2;
+}
+
+#hero select[name=max-price], #hero select[name=min-price] {
+  text-align: center;
+  margin: 2% 0;
+  padding: 1%;
+  text-indent: 2px;
+  width: 150px;
+  height: 38px;
+  background-color: #f2f2f2;
+}
+
+#hero input[type=submit], #add input[type=submit] {
+  margin-bottom: 8%;
+  background-color: #A91C24;
+  color: white;
+  padding: 2% 5%;
+  border-color: #A91C24;
+  border-radius: 5px;
+}
+
+/*Search Results*/
+
+#search-container .card {
+  max-width: 23%;
+  margin: 1%;
+  padding: 2%;
+  border: none;
+}
+
+#search-container .card:hover {
+  border-radius: 4px;
+  border-bottom-color: rgba(255,255,255,0);
+  -webkit-box-shadow: 0px 0px 5px 0px #c00;
+  box-shadow: 0px 0px 5px 0px #c00;
+}
+
+.delete {
+  color: white;
+  background-color: #A91C24;
+  position: absolute;
+  padding: 0 8px 2px 8px;
+  border-radius: 100%;
+  top: -13px;
+  left: -13px;
+  display: none;
+}
+
+/*Add Property*/
+
+#add {
+  background-image: url('img/home2.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+#add input[type=submit] {
+  display: block;
+}
+
+#add input[type=text] {
+    margin: 1%;
+}
+
+#add label[for=imageUpload]{
+  margin-bottom: 1rem;
 }

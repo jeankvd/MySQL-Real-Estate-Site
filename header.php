@@ -23,6 +23,8 @@
           <a class="nav-item nav-link" href="search.php">search</a>
           <a class="nav-item nav-link" href="addProperty.php">Add</a>
           <a class="nav-item nav-link" href="members.php">Members</a>
+          <a class="nav-item nav-link" href="communities.php">Communities</a>
+          <a class="nav-item nav-link" href="contact.php">Contact Us</a>
         </div>
       </div>
     </nav>
