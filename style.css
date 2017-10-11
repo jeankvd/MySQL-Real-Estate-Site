@@ -1,3 +1,13 @@
+/*Header*/
+
+.bg-inverse {
+  background-color: #A91C24 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
 /*Home & Add Property */
 
 #hero {
@@ -6,7 +16,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  margin-top: 4%;
+  margin-bottom: 0;
 }
 
 #hero .card, #add .card {
@@ -118,4 +128,27 @@
 
 #add label[for=imageUpload]{
   margin-bottom: 1rem;
+}
+
+
+/*Delete property*/
+
+#deleteProperty {
+  display: none;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20%;
+  right: 24.5%;
+  padding: 3%;
+  background-color: #f2f2f2;
+  border: 3px solid #A91C24;
+}
+
+input.btn {
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px grey solid;
 }

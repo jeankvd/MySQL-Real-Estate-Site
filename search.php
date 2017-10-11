@@ -27,11 +27,17 @@
       $query = "SELECT * FROM realestate_table;";
     }
 
+
+    $id = $_POST['id'];
+    if (!empty($_POST['id'])) {
+      mysqli_query($db, "DELETE FROM realestate_table WHERE id = $id;");
+      echo "Deleted Home from Database";
+    }
     $result = mysqli_query($db, $query);
 
     echo "<div class='container' id='search-container'><div class='row' id='row'>";
     while($row = mysqli_fetch_array($result)) {
-      echo "<div class='col-3 card'>";
+      echo "<div class='col-sm-3 card'>";
       echo "<img class='card-img-top img-fluid' alt='Card image' src='images/".$row['image']."' >";
       echo "<h4 class='card-title'>" . $row['name'] . "</h4>";
       echo "<h6>" . $row['beds'] . " Beds/ " .
@@ -40,7 +46,7 @@
       echo "<p> <strong>Address</strong>: " . $row['address'] . "</p>";
       echo "<p> <strong>Community</strong>: " . $row['community'] . "</p>";
       echo "<p> <strong>Price</strong>: " . "$" . $row['price'] . "</p>";
-      echo "<div class='delete'>x</div>";
+      echo "<div class='delete' id='" . $row['id'] . "'>x</div>";
       echo "</div>";
     }
     echo "</div></div>";
@@ -48,6 +54,15 @@
     ?>
 
     <?php mysqli_close($db); ?>
+
+    <div id="deleteProperty">
+      <h3>Are you sure you want to delete this Property?</h3>
+      <form class="" action="search.php" method="post">
+        <input value="" name="id" id="id">
+        <input type="submit" class="btn" name="yes" value="Yes I do.">
+        <a href="search.php" class="btn" id="noButton">No!</a>
+      </form>
+    </div>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

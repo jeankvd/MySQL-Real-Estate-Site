@@ -16,15 +16,11 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Navbar</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="search.php">search</a>
-          <a class="nav-item nav-link" href="addProperty.php">Add</a>
-          <a class="nav-item nav-link" href="members.php">Members</a>
-          <a class="nav-item nav-link" href="communities.php">Communities</a>
-          <a class="nav-item nav-link" href="contact.php">Contact Us</a>
+          <a class="nav-item nav-link" href="search.php">Search Properties</a>
+          <a class="nav-item nav-link" href="addProperty.php">Add Property</a>
         </div>
       </div>
     </nav>
