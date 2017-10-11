@@ -7,7 +7,7 @@
     <h2 class="">Add a Property</h2>
     <p class="">Fill the following form and Add your House to our database!</p>
 
-    <form action="addProperty.php" method="POST" enctype="multipart/form-data">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data">
       <input type="text" name="propertyName" value="" placeholder="Property Name" class="col-sm-11">
       <input type="text" name="address" value="" placeholder="Property's Address" class="col-sm-5">
       <input type="text" name="communityName" value="" placeholder="Community Name" class="col-sm-5">
@@ -35,10 +35,8 @@
   </div>
 </div>
 
-<?php echo $_POST['propertyName']; ?>
-
 <?php if($_POST['propertyName']) { ?>
-  <?php $db = mysqli_connect('localhost:8889','root', 'root', 'realestate_db') or die("Couldn't Connect"); ?>
+  <?php $db = mysqli_connect('localhost','id3225676_admin', 'HurryGotta12', 'id3225676_realestate_db') or die("Couldn't Connect"); ?>
 
   <?php
   $target = "images/" . ($_FILES['image']['name']);
@@ -64,3 +62,11 @@
 
   <?php mysqli_close($db); ?>
 <?php } ?>
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+<script type="text/javascript" src="app.js"></script>
+</html>

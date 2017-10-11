@@ -1,35 +1,33 @@
 <?php include('header.php'); ?>
 
-<p>
-  Lorem ipsum so i can see the db query
-  Lorem ipsum so i can see the db query <br>
-  Lorem ipsum so i can see the db query <br>
-</p>
-
-    <?php $db = mysqli_connect('localhost:8889', 'root', 'root', 'realestate_db') or die("can't conntect"); ?>
+    <?php $db = mysqli_connect('localhost','id3225676_admin', 'HurryGotta12', 'id3225676_realestate_db') or die("can't conntect"); ?>
 
     <?php
-    $name = $_POST['name'];
-    $beds = $_POST['beds'];
-    $bathrooms = $_POST['bathrooms'];
-    $min_price = $_POST['min-price'];
-    $max_price = $_POST['max-price'];
+
 
     if (isset($_POST['submit'])) {
+
+      $name = $_POST['name'];
+      $beds = $_POST['beds'];
+      $bathrooms = $_POST['bathrooms'];
+      $min_price = $_POST['min-price'];
+      $max_price = $_POST['max-price'];
       $query = "SELECT * FROM realestate_table  WHERE ";
+
       if (!empty($_POST['name'])) { $query = $query . "name = $name AND "; }
-      $query = $query . "beds >= $beds AND ";
-      $query = $query . "baths >= $bathrooms AND ";
-      $query = $query . "price > $min_price AND ";
-      $query = $query . "price < $max_price";
-      $query = $query . ";";
+        $query = $query . "beds >= $beds AND ";
+        $query = $query . "baths >= $bathrooms AND ";
+        $query = $query . "price > $min_price AND ";
+        $query = $query . "price < $max_price";
+        $query = $query . ";";
     } else {
-      $query = "SELECT * FROM realestate_table;";
+        $query = "SELECT * FROM realestate_table;";
     }
 
 
-    $id = $_POST['id'];
     if (!empty($_POST['id'])) {
+      $id = $_POST['id'];
+
       mysqli_query($db, "DELETE FROM realestate_table WHERE id = $id;");
       echo "Deleted Home from Database";
     }
